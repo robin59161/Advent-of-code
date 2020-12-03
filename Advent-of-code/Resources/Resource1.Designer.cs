@@ -85,9 +85,33 @@ namespace Advent_of_code.Resources {
         ///1-14 q: bcqqqqqqdqqqqbqqcq
         ///1-10 [le reste de la chaîne a été tronqué]&quot;;.
         /// </summary>
-        internal static string Input {
+        internal static string Input2 {
             get {
-                return ResourceManager.GetString("Input", resourceCulture);
+                return ResourceManager.GetString("Input2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à ....#..#.................#..#..
+        ///#..#.#.#..#.###.#..#...#..#....
+        ///.#....#......#.#.#..##...#...#.
+        ///.............#.#..#........#.#.
+        ///............##.#..#...##.###...
+        ///.....#..#......#......##.......
+        ///........##........#...........#
+        ///..................#..#.........
+        ///......#..#...#..#......###..#..
+        ///.#....#...........#.....#.##...
+        ///..#..#.#........###..#....#...#
+        ///..#..##..#..#....#..#......#...
+        ///......#....................#...
+        ///.........#..#..................
+        ///..#.#.....#......#.#....#...#..
+        ///..#..........##.. [le reste de la chaîne a été tronqué]&quot;;.
+        /// </summary>
+        internal static string Input3 {
+            get {
+                return ResourceManager.GetString("Input3", resourceCulture);
             }
         }
     }
