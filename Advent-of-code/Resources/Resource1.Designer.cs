@@ -114,5 +114,41 @@ namespace Advent_of_code.Resources {
                 return ResourceManager.GetString("Input3", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à hcl:#6b5442 ecl:brn iyr:2019
+        ///pid:637485594 hgt:171cm
+        ///eyr:2021 byr:1986
+        ///
+        ///eyr:2025 iyr:1938 byr:2014 hcl:#341e13
+        ///hgt:66cm
+        ///pid:70195175
+        ///
+        ///hcl:#efcc98
+        ///iyr:2011 ecl:hzl
+        ///eyr:2020 hgt:174cm pid:589700330
+        ///
+        ///hcl:#bba027 eyr:2027 cid:54
+        ///ecl:brn pid:153cm
+        ///iyr:2028 hgt:173cm
+        ///byr:2004
+        ///
+        ///hcl:b45cec
+        ///iyr:2011 ecl:oth hgt:185cm eyr:2029 pid:178cm
+        ///
+        ///hgt:185cm iyr:2016 eyr:2029 hcl:#888785 pid:026540921
+        ///
+        ///eyr:2025
+        ///hcl:6962f7 byr:2015 ecl:oth iyr:1974
+        ///hgt:191cm
+        ///pid:2616015
+        ///
+        ///pid:268398556 iyr:2019 ecl:grn        /// [le reste de la chaîne a été tronqué]&quot;;.
+        /// </summary>
+        internal static string Input4 {
+            get {
+                return ResourceManager.GetString("Input4", resourceCulture);
+            }
+        }
     }
 }
