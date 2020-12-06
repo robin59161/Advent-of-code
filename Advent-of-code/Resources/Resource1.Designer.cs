@@ -201,5 +201,74 @@ namespace Advent_of_code.Resources {
                 return ResourceManager.GetString("Input5", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à nvlyak
+        ///nyvha
+        ///yaen
+        ///qynia
+        ///
+        ///kend
+        ///endk
+        ///
+        ///atxcykpvmb
+        ///pcvmthyxbak
+        ///ayvpcbtkxm
+        ///cvpkyabtmx
+        ///typbmvckxa
+        ///
+        ///s
+        ///s
+        ///s
+        ///s
+        ///
+        ///on
+        ///aoqc
+        ///owq
+        ///coa
+        ///
+        ///pw
+        ///wpi
+        ///pwxlhqor
+        ///pw
+        ///
+        ///nx
+        ///xn
+        ///
+        ///dlevrzpucfmsq
+        ///pceimlrfsquvd
+        ///dpceruqsfmlv
+        ///hgxudfpqyvbcslrjname
+        ///
+        ///kczmswvorg
+        ///uryvlqaogmdixs
+        ///rmostvg
+        ///gsrmovb
+        ///
+        ///ref
+        ///fer
+        ///
+        ///vmwdhgnlfiyoepsujbk
+        ///epudykjwhignmfbovsl
+        ///fjvuimnwbkogsldhpey
+        ///ibmhuscpgeolfkynvdwj
+        ///psjgubfvlhaknodeiywm
+        ///
+        ///fmnpljusix
+        ///vqrefngyjdahclk
+        ///lfjons
+        ///
+        ///y
+        ///uiwl
+        ///
+        ///lsuqkmjinrzhgevfpwto
+        ///gkmodihnsjtful
+        ///ciguflhko [le reste de la chaîne a été tronqué]&quot;;.
+        /// </summary>
+        internal static string Input6 {
+            get {
+                return ResourceManager.GetString("Input6", resourceCulture);
+            }
+        }
     }
 }
