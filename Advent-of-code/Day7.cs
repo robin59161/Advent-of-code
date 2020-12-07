@@ -60,17 +60,19 @@ namespace Advent_of_code
             return count;
         }
 
-        public int CanBeHoldBy(List<Bag> parents)
+        public int CanBeHoldBy(List<Bag> visited)
         {
-            int nb = this.Parents.Count();
-            if(parents == null)
-                parents = new List<Bag>();
-            parents.AddRange(this.Parents.Where(x=>!parents.Contains(x)));
-            foreach (Bag bag in Parents)
+            if (visited == null)
+                visited = new List<Bag>();
+            List<Bag> notVisited = this.Parents.Where(x => !visited.Contains(x)).ToList();
+            int nb = notVisited.Count();
+            visited.AddRange(notVisited);
+            foreach (Bag bag in notVisited)
             {
-                nb += bag.CanBeHoldBy(parents);
+                nb += bag.CanBeHoldBy(visited);
             }
-            return parents.Count();
+            
+            return nb;
         }
 
     }
