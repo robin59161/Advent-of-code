@@ -31,18 +31,18 @@ namespace Advent_of_code
     public class Bag
     {
         public string Label { get; set; }
-        public List<KeyValuePair<Bag,int>> Childs { get; set; }
+        public Dictionary<Bag,int> Childs { get; set; }
         public List<Bag> Parents { get; set; }
         public Bag(string label)
         {
             this.Label = label;
-            Childs = new List<KeyValuePair<Bag, int>>();
+            Childs = new Dictionary<Bag, int>();
             Parents = new List<Bag>();
         }
 
         public void AddChild(Bag b,int nb)
         {
-            this.Childs.Add(new KeyValuePair<Bag, int>(b, nb));
+            this.Childs.Add(b, nb);
         }
 
         public void AddParent(Bag b)
