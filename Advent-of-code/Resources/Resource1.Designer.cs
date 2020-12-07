@@ -270,5 +270,20 @@ namespace Advent_of_code.Resources {
                 return ResourceManager.GetString("Input6", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à wavy bronze bags contain 5 striped gold bags, 5 light tomato bags.
+        ///drab indigo bags contain 4 pale bronze bags, 2 mirrored lavender bags.
+        ///pale olive bags contain 3 faded bronze bags, 5 wavy orange bags, 3 clear black bags, 1 striped purple bag.
+        ///faded white bags contain 5 vibrant violet bags, 4 light teal bags.
+        ///mirrored magenta bags contain 2 muted cyan bags, 3 vibrant crimson bags.
+        ///dull purple bags contain 1 striped fuchsia bag.
+        ///dull lime bags contain 2 posh green bags, 2 muted gold bags, 1 light bron [le reste de la chaîne a été tronqué]&quot;;.
+        /// </summary>
+        internal static string Input7 {
+            get {
+                return ResourceManager.GetString("Input7", resourceCulture);
+            }
+        }
     }
 }
