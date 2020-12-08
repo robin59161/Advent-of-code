@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -10,84 +11,51 @@ namespace Advent_of_code
     {
         public static int Part1(string input)
         {
-            List<int> seen = new List<int>();
-            string[] lines = input.Split(Environment.NewLine);
-            int current = 0;
-            int acc = 0;
-            Regex r = new Regex(@"(acc|jmp|nop)\s([+-]\d*)");
-            while (!seen.Contains(current) && current < lines.Length)
-            {
-                seen.Add(current);
-                string line = lines[current];
-                Match m = r.Match(line);
-                switch(m.Groups[1].Value)
-                {
-                    case "acc":
-                        acc += Int32.Parse(m.Groups[2].Value);
-                        current++;
-                        break;
-                    case "jmp":
-                        current += Int32.Parse(m.Groups[2].Value);
-                        break;
-                    default:
-                        current++;
-                        break;
-                }
-                
-            }
-            return acc;
+            var lines = input.Split(Environment.NewLine).Select(l => l.Split(' '));
+            var instructions = lines.Select(x => (inst: x[0], value: int.Parse(x[1][1..]) * (x[1][0] == '-' ? -1 : 1))).ToList();
+            return RunBoot(instructions).acc;
         }
 
         public static int Part2(string input)
         {
-            string[] original = input.Split(Environment.NewLine);
-            for(int i = 0;i < original.Length; i++)
-            {
-                Regex r = new Regex(@"(acc|jmp|nop)\s([+-]\d*)");
-                if (r.Match(original[i]).Groups[1].Value == "acc")
-                    continue;
-                string[] modified = new string[original.Length];
-                Array.Copy(original,modified,original.Length);
-                if (modified[i].Contains("jmp"))
-                    modified[i]=  modified[i].Replace("jmp", "nop");
-                else
-                    modified[i] = modified[i].Replace("nop", "jmp");
-
-                int[] res = runBoot(modified);
-                if (res[0] == original.Length)
-                    return res[1];
-
-            }
-            throw new Exception("No Solution Found");
+            var lines = input.Split(Environment.NewLine).Select(l => l.Split(' '));
+            var instructions = lines.Select(x => (inst: x[0], value: int.Parse(x[1][1..]) * (x[1][0] == '-' ? -1 : 1))).ToList();
+            return Flip(instructions);
         }
 
-        private static int[] runBoot(string[] lines)
+        static (int acc, int index) RunBoot(List<(string inst, int value)> i)
         {
-            List<int> seen = new List<int>();
-            int current = 0;
-            int acc = 0;
-            Regex r = new Regex(@"(acc|jmp|nop)\s([+-]\d*)");
-            while (!seen.Contains(current) && current < lines.Length)
-            {
-                seen.Add(current);
-                string line = lines[current];
-                Match m = r.Match(line);
-                switch (m.Groups[1].Value)
-                {
-                    case "acc":
-                        acc += Int32.Parse(m.Groups[2].Value);
-                        current++;
-                        break;
-                    case "jmp":
-                        current += Int32.Parse(m.Groups[2].Value);
-                        break;
-                    default:
-                        current++;
-                        break;
-                }
+            var instructionsExecuted = new List<int>();
+            (int acc, int index) reg = new(0, 0);
 
+            (int acc, int index) Process((string instruction, int value) i) => i.instruction
+             switch
+            {
+                "acc" => (reg.acc + i.value, reg.index + 1),
+                "jmp" => (reg.acc, reg.index + i.value),
+                "nop" => (reg.acc, reg.index + 1)
+            };
+
+            while (reg.index < i.Count && !instructionsExecuted.Contains(reg.index))
+            {
+                instructionsExecuted.Add(reg.index);
+                reg = Process(i[reg.index]);
             }
-            return new int[] { current, acc };
+            return reg;
         }
+
+        static int Flip(List<(string inst, int value)> instructions)
+        {
+            string flip(string value) => value switch { "jmp" => "nop", "nop" => "jmp", "acc" => "acc" };
+            for (int i = 0; i < instructions.Count; i++)
+            {
+                instructions[i] = (flip(instructions[i].inst), instructions[i].value);
+                var comp = RunBoot(instructions);
+                if (comp.index == instructions.Count) return comp.acc;
+                instructions[i] = (flip(instructions[i].inst), instructions[i].value);
+            }
+            return 0;
+        }
+
     }
 }
