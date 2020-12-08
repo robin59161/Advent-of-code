@@ -285,5 +285,69 @@ namespace Advent_of_code.Resources {
                 return ResourceManager.GetString("Input7", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à acc +29
+        ///acc +0
+        ///acc +36
+        ///jmp +292
+        ///acc +11
+        ///acc +16
+        ///nop +280
+        ///nop +320
+        ///jmp +310
+        ///acc +15
+        ///jmp +76
+        ///acc +31
+        ///acc +6
+        ///acc +29
+        ///acc +35
+        ///jmp +524
+        ///acc +4
+        ///acc +12
+        ///jmp +162
+        ///acc +14
+        ///acc -10
+        ///jmp +312
+        ///acc +19
+        ///jmp +385
+        ///acc +46
+        ///acc +13
+        ///acc -19
+        ///jmp +366
+        ///jmp +56
+        ///acc -9
+        ///nop +74
+        ///jmp +357
+        ///acc +28
+        ///jmp +223
+        ///acc -12
+        ///jmp +292
+        ///nop +385
+        ///acc +45
+        ///jmp +255
+        ///jmp +337
+        ///nop +465
+        ///acc +43
+        ///jmp +555
+        ///acc +20
+        ///acc +23
+        ///acc +39
+        ///jmp -6
+        ///acc -4
+        ///jmp -39
+        ///acc +7
+        ///acc -13
+        ///acc +41
+        ///acc +4
+        ///jmp +80
+        ///jmp +1
+        ///jmp +484        /// [le reste de la chaîne a été tronqué]&quot;;.
+        /// </summary>
+        internal static string Input8 {
+            get {
+                return ResourceManager.GetString("Input8", resourceCulture);
+            }
+        }
     }
 }
