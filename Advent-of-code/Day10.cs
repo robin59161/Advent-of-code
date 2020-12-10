@@ -23,7 +23,7 @@ namespace Advent_of_code
         public static long Part2(string input)
         {
             List<string> chemins = new List<string>();
-            int[] inputs = input.Split(Environment.NewLine).Select(x => Convert.ToInt32(x)).OrderBy(x => x).ToArray();
+            var inputs = input.Split(Environment.NewLine).Select(x => Convert.ToInt32(x));
             var newData = Enumerable.Empty<int>()
                 .Append(0)
                 .Concat(inputs)
