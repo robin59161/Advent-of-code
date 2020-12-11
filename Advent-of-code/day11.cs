@@ -15,13 +15,17 @@ namespace Advent_of_code
         static int[,] matrix;
         static int[,] copyMatrix;
 
-        public static int Part1(string input)
+        private static IList<(int x, int y)> _neighbors = new List<(int x, int y)>
         {
-            Stopwatch st = new Stopwatch();
-            st.Start();
+            (-1, -1), (-1, 0), (-1, 1),
+            (0, -1), (0, 1),
+            (1, -1), (1, 0), (1, 1)
+        };
 
+        public static void ConstructMatrix(string input)
+        {
             List<string> splitted = input.Split(Environment.NewLine).ToList();
-            matrix = new int[splitted[0].Length, splitted.Count+1];
+            matrix = new int[splitted[0].Length, splitted.Count + 1];
             foreach (var (l, yIndex) in splitted.WithIndex())
             {
                 foreach (var (ch, xIndex) in l.WithIndex())
@@ -36,32 +40,20 @@ namespace Advent_of_code
                     }
                 }
             }
-            int res = Solve();
+        }
+
+
+        public static int Part1(string input)
+        {
+            Stopwatch st = new Stopwatch();
+            st.Start();
+            ConstructMatrix(input);
+            int res = Solve(GetDirectCovid);
             Console.WriteLine("Time : " + st.Elapsed.TotalSeconds);
             return res;
         }
 
-        public static int Solve()
-        {
-            bool stabilized = false;
-            while (!stabilized)
-            {
-                copyMatrix = matrix.Clone() as int[,];
-                bool changed = false;
-                for (int x = 0; x < matrix.GetLength(0); x++)
-                {
-                    for (int y = 0; y < matrix.GetLength(1); y++)
-                    {
-                        changed |= GetAdjacent((x, y));
-                    }
-                }
-                //DrawState();
-                stabilized = !changed;
-            }
-            return matrix.Cast<int>().Count(a => a == OCCUPIED); ;
-        }
-
-        public static bool GetAdjacent((int X, int Y) s)
+        public static bool GetDirectCovid((int X, int Y) s)
         {
             int occuped = 0;
             for (int j = Math.Max(0, s.X - 1); j <= Math.Min(s.X + 1, matrix.GetLength(0) - 1); j++)
@@ -87,6 +79,82 @@ namespace Advent_of_code
             }
             return false;
         }
+
+        public static int Part2(string input)
+        {
+            Stopwatch st = new Stopwatch();
+            st.Start();
+            ConstructMatrix(input);
+
+            int res = Solve(GetFilleDeTaRegion);
+            Console.WriteLine("Time : " + st.Elapsed.TotalSeconds);
+            return res;
+        }
+
+        
+
+        public static int Solve(Func<(int,int),bool> action)
+        {
+            bool stabilized = false;
+            while (!stabilized)
+            {
+                copyMatrix = matrix.Clone() as int[,];
+                bool changed = false;
+                for (int x = 0; x < matrix.GetLength(0); x++)
+                {
+                    for (int y = 0; y < matrix.GetLength(1); y++)
+                    {
+                        changed |= action((x, y));
+                    }
+                }
+                //DrawState();
+                stabilized = !changed;
+            }
+            return matrix.Cast<int>().Count(a => a == OCCUPIED);
+        }
+
+        public static bool GetFilleDeTaRegion((int X, int Y) s)
+        {
+            int occuped = 0;
+            foreach(var dim in _neighbors)
+            {
+                var multiplier = 1;
+                var currentSeat = 0;
+                do
+                {
+                    var _x = (dim.x * multiplier) + s.X;
+                    var _y = (dim.y * multiplier) + s.Y;
+                    if (!ValidePos(_x, _y))
+                    {
+                        break;
+                    }
+                    currentSeat = copyMatrix[_x, _y];
+                    multiplier++;
+                } while (currentSeat == FLOOR);
+
+                if(currentSeat == OCCUPIED) 
+                    occuped++;
+            }
+
+            if ((matrix[s.X, s.Y] == Day11.OCCUPIED && occuped >= 5))
+            {
+                matrix[s.X, s.Y] = Day11.FREE;
+                return true;
+            }
+            else if ((matrix[s.X, s.Y] == Day11.FREE && occuped == 0))
+            {
+                matrix[s.X, s.Y] = Day11.OCCUPIED;
+                return true;
+            }
+            return false;
+        }
+
+        public static bool ValidePos(int x,int y)
+        {
+            return x >= 0 && x < matrix.GetLength(0)
+                && y >= 0 && y < matrix.GetLength(1);
+        }
+
 
         public static void DrawState()
         {
