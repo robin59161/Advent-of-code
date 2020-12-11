@@ -61,114 +61,35 @@ namespace Advent_of_code.Resources {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à 2
-        ///49
-        ///78
-        ///116
-        ///143
-        ///42
-        ///142
-        ///87
-        ///132
-        ///86
-        ///67
-        ///44
-        ///136
-        ///82
-        ///125
-        ///1
-        ///108
-        ///123
-        ///46
-        ///37
-        ///137
-        ///148
-        ///106
-        ///121
+        ///   Recherche une chaîne localisée semblable à 16
         ///10
-        ///64
-        ///165
-        ///17
-        ///102
-        ///156
-        ///22
-        ///117
-        ///31
-        ///38
-        ///24
-        ///69
-        ///131
-        ///144
-        ///162
-        ///63
-        ///171
-        ///153
-        ///90
-        ///9
-        ///107
-        ///79
-        ///7
-        ///55
-        ///138
-        ///34
-        ///52
-        ///77
-        ///152
-        ///3
-        ///158
-        ///100
-        ///45
-        ///129
-        ///130
-        ///135
-        ///23
-        ///93
-        ///96
-        ///103
-        ///124
-        ///95
-        ///8
-        ///62
-        ///39
-        ///118
-        ///164
-        ///172
-        ///75
-        ///122
-        ///20
-        ///145
-        ///14
-        ///112
-        ///61
-        ///43
-        ///141
-        ///30
-        ///85
-        ///101
-        ///151
-        ///29
-        ///113
-        ///94
-        ///68
-        ///58
-        ///76
-        ///97
-        ///28
-        ///111
-        ///128
-        ///21
+        ///15
+        ///5
+        ///1
         ///11
-        ///163
-        ///161
-        ///4
-        ///168
-        ///157
-        ///27
-        ///72.
+        ///7
+        ///19
+        ///6
+        ///12
+        ///4.
         /// </summary>
         internal static string Input10 {
             get {
                 return ResourceManager.GetString("Input10", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à LLLLLLLLLLLLLL...LLL.LLLLLLLLL.LLLLLLLLLLLLLLLLLLL.LLLLLLLL.LLL.LLLLLLLLLLLLLLLLLLL.LLLLLLLLLLLLLL
+        ///LLLLLL.LLLLLLLL.L.LL.LLLLLLLLLLLLLLLLLLLLLLLLLLLLL..LLLLLLLLL.LLLLLLL.LLLLLLL.LLLLL.LLLLLLLLLLL.LL
+        ///LLLLLL.LLLLLLLL.L.LL.LLLLLLLLLLLL.L.L.LL.LLLLLLLLL.LLLLLL.L.LLLL.LLLL.LLLLLLLLLLLLL.LLLLLLLLLLLLLL
+        ///L.LLLL.LLLLLLLL.LLLL.LLLLLL.LLLLLLLLL.LLLLLL.LLLLL.LLLLLLLLLLLLLLLLLLLLLL.LLL.LLLLL.LL.LLLLLLLLLLL
+        ///LLL.LL.LLLLLLLLLLLLL..LLLL.LLLLLLLL.L.LLL.LL.LLLLL.LLLLLLLL.LLLLLLLLL.LLLLLLLLLLLLL.LLLLLLLLLLLLLL
+        ///L.....LLLLL. [le reste de la chaîne a été tronqué]&quot;;.
+        /// </summary>
+        internal static string Input11 {
+            get {
+                return ResourceManager.GetString("Input11", resourceCulture);
             }
         }
         
