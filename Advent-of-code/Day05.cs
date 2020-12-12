@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Advent_of_code
 {
-    public static class Day5
+    public static class Day05
     {
         private static Dictionary<char, char> binMap = new Dictionary<char, char>()
         {

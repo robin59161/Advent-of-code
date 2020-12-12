@@ -5,7 +5,7 @@ using System.Text.RegularExpressions;
 
 namespace Advent_of_code
 {
-    public static class Day2
+    public static class Day02
     {
         public static int Part1(string inputs)
         {

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Advent_of_code
 {
-    public static class Day9
+    public static class Day09
     {
         static readonly int preamble = 25;
 
