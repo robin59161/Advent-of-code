@@ -9,7 +9,7 @@ namespace Advent_of_code
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(Day13.Part2(Resources.Resource1.Input13));
+            Console.WriteLine(Day14.Part1(Resources.Resource1.Input14));
             Console.ReadKey();
         }
         

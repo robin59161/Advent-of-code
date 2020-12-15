@@ -226,6 +226,34 @@ namespace Advent_of_code.Resources {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à mask = 10X0110X01100X00111XX00001X011101001
+        ///mem[45673] = 370803
+        ///mem[32234] = 92667525
+        ///mem[47600] = 955
+        ///mem[6610] = 316949
+        ///mask = 0X10X001X00011X1111X111111010100X000
+        ///mem[13551] = 903991
+        ///mem[45894] = 160707
+        ///mem[4188] = 64891428
+        ///mem[43779] = 4687114
+        ///mem[51764] = 53700515
+        ///mask = 01X0X0001X10XX1001001111X0101111010X
+        ///mem[34881] = 3311
+        ///mem[23766] = 26540481
+        ///mem[4785] = 13080077
+        ///mem[43617] = 238523796
+        ///mask = 010X100X010000101X100101011X0110X00X
+        ///mem[4166] = 16195
+        ///mem[21001] = 622
+        ///mem[13952] = 245 [le reste de la chaîne a été tronqué]&quot;;.
+        /// </summary>
+        internal static string Input14 {
+            get {
+                return ResourceManager.GetString("Input14", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à 4-5 r: rrrjr
         ///9-10 x: pxcbpxxwkqjttx
         ///8-13 b: rjbbbbvgrbrfjx
