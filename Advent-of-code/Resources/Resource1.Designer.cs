@@ -216,6 +216,16 @@ namespace Advent_of_code.Resources {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à 1000495
+        ///19,x,x,x,x,x,x,x,x,41,x,x,x,x,x,x,x,x,x,521,x,x,x,x,x,x,x,23,x,x,x,x,x,x,x,x,17,x,x,x,x,x,x,x,x,x,x,x,29,x,523,x,x,x,x,x,37,x,x,x,x,x,x,13.
+        /// </summary>
+        internal static string Input13 {
+            get {
+                return ResourceManager.GetString("Input13", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à 4-5 r: rrrjr
         ///9-10 x: pxcbpxxwkqjttx
         ///8-13 b: rjbbbbvgrbrfjx
