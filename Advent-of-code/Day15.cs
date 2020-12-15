@@ -26,5 +26,34 @@ namespace Advent_of_code
             }
             return spoken.Last();
         }
+
+        public static long Part2(string Input, int stop)
+        {
+            Dictionary<long,(long,long)> spoken = new Dictionary<long, (long,long)>();
+            long last = 0;
+            foreach (var(line,Index) in Input.Split(',').WithIndex())
+            {
+                last = Convert.ToInt64(line);
+                spoken.Add(last, (Index+1,Index+1));
+            }
+            for (int turn = spoken.Count + 1; turn <= stop; turn++)
+            {
+                if (!spoken.ContainsKey(last))
+                {
+                    spoken[0] = (turn, spoken[0].Item2);
+                    last = 0;
+                }
+                else
+                {
+                    long num = turn - 1 - spoken[last].Item2;
+                    if(spoken.ContainsKey(num))
+                        spoken[num] = (turn, spoken[num].Item1);
+                    else
+                        spoken[num] = (turn,turn);
+                    last = num;
+                }
+            }
+            return last;
+        }
     }
 }
