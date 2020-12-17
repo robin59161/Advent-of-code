@@ -61,6 +61,102 @@ namespace Advent_of_code.Resources {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à 2000
+        ///50
+        ///1984
+        ///1600
+        ///1736
+        ///1572
+        ///2010
+        ///1559
+        ///1999
+        ///1764
+        ///1808
+        ///1745
+        ///1343
+        ///1495
+        ///1860
+        ///1977
+        ///1981
+        ///1640
+        ///1966
+        ///1961
+        ///1978
+        ///1719
+        ///1930
+        ///535
+        ///1804
+        ///1535
+        ///1507
+        ///1284
+        ///1618
+        ///1991
+        ///1589
+        ///1593
+        ///1960
+        ///1953
+        ///1963
+        ///1697
+        ///1741
+        ///1823
+        ///1932
+        ///1789
+        ///1822
+        ///1972
+        ///1570
+        ///1651
+        ///1800
+        ///1514
+        ///726
+        ///1567
+        ///72
+        ///1987
+        ///1791
+        ///1842
+        ///1020
+        ///1541
+        ///1383
+        ///1505
+        ///2009
+        ///1925
+        ///13
+        ///1973
+        ///1599
+        ///1632
+        ///1905
+        ///1626
+        ///1554
+        ///1913
+        ///1890
+        ///1583
+        ///1513
+        ///1828
+        ///187
+        ///1616
+        ///1508
+        ///1524
+        ///1613
+        ///1648
+        ///32
+        ///1612
+        ///1992
+        ///1671
+        ///1955
+        ///1943
+        ///1936
+        ///1870
+        ///1629
+        ///1493
+        ///1770
+        ///1 [le reste de la chaîne a été tronqué]&quot;;.
+        /// </summary>
+        internal static string Input1 {
+            get {
+                return ResourceManager.GetString("Input1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à 16
         ///10
         ///15
@@ -254,6 +350,15 @@ namespace Advent_of_code.Resources {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à 6,3,15,13,1,0.
+        /// </summary>
+        internal static string Input15 {
+            get {
+                return ResourceManager.GetString("Input15", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à departure location: 31-221 or 241-952
         ///departure station: 27-780 or 787-957
         ///departure platform: 34-405 or 411-970
@@ -274,6 +379,22 @@ namespace Advent_of_code.Resources {
         internal static string Input16 {
             get {
                 return ResourceManager.GetString("Input16", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à ..##.#.#
+        ///##....#.
+        ///....####
+        ///#..##...
+        ///#..#.##.
+        ///.#..#...
+        ///##...##.
+        ///.#...#...
+        /// </summary>
+        internal static string Input17 {
+            get {
+                return ResourceManager.GetString("Input17", resourceCulture);
             }
         }
         
