@@ -12,10 +12,10 @@ namespace Advent_of_code
         {
             Stopwatch st = new Stopwatch();
             st.Start();
-            long res = Day15.Part2("6,3,15,13,1,0", 30000000);
+            long res = Day16.Part2(Resources.Resource1.Input16);
             st.Stop();
             Console.WriteLine(res);
-            Console.WriteLine("Temps d'éxécution :" + Math.Round(st.Elapsed.TotalSeconds,3)+"s");
+            Console.WriteLine("Temps d'éxécution :" + st.Elapsed.Milliseconds+"ms");
             Console.ReadKey();
         }
         
