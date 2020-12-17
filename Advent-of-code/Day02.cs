@@ -44,8 +44,8 @@ namespace Advent_of_code
             foreach (string input in inputs.Split(Environment.NewLine))
             {
                 Match match = extract.Matches(input)[0];
-                int min = Int32.Parse(match.Groups[1].Value);
-                int max = Int32.Parse(match.Groups[2].Value);
+                int min = Int32.Parse(match.Groups[1].Value)-1;
+                int max = Int32.Parse(match.Groups[2].Value)-1;
                 char c = match.Groups[3].Value[0];
                 string pass = match.Groups[4].Value;
                 if ((pass[min] == c && pass[max] != c) || (pass[min] != c && pass[max] == c))

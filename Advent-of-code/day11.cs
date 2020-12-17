@@ -45,11 +45,8 @@ namespace Advent_of_code
 
         public static int Part1(string input)
         {
-            Stopwatch st = new Stopwatch();
-            st.Start();
             ConstructMatrix(input);
             int res = Solve(GetDirectCovid);
-            Console.WriteLine("Time : " + st.Elapsed.TotalSeconds);
             return res;
         }
 
@@ -82,12 +79,9 @@ namespace Advent_of_code
 
         public static int Part2(string input)
         {
-            Stopwatch st = new Stopwatch();
-            st.Start();
             ConstructMatrix(input);
 
             int res = Solve(GetFilleDeTaRegion);
-            Console.WriteLine("Time : " + st.Elapsed.TotalSeconds);
             return res;
         }
 

@@ -7,10 +7,12 @@ namespace Advent_of_code
 {
     public static class Day15
     {
-        public static long Part1(string Input,int stop)
+        static readonly int Stop1 = 2020;
+        static readonly long Stop2 = 30000000;
+        public static long Part1(string Input)
         {
             List<long> spoken =  Input.Split(',').Select(x => Convert.ToInt64(x)).ToList();
-            for(int turn=spoken.Count+1; turn <= stop; turn++)
+            for(int turn=spoken.Count+1; turn <= Stop1; turn++)
             {
                 long last = spoken.Last();
                 bool new_entry = spoken.IndexOf(last) == spoken.Count()-1;
@@ -27,7 +29,7 @@ namespace Advent_of_code
             return spoken.Last();
         }
 
-        public static long Part2(string Input, int stop)
+        public static long Part2(string Input)
         {
             Dictionary<long,(long,long)> spoken = new Dictionary<long, (long,long)>();
             long last = 0;
@@ -36,7 +38,7 @@ namespace Advent_of_code
                 last = Convert.ToInt64(line);
                 spoken.Add(last, (Index+1,Index+1));
             }
-            for (int turn = spoken.Count + 1; turn <= stop; turn++)
+            for (int turn = spoken.Count + 1; turn <= Stop2; turn++)
             {
                 if (!spoken.ContainsKey(last))
                 {
