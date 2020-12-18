@@ -399,6 +399,21 @@ namespace Advent_of_code.Resources {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à 2 * 9 + 5 + ((8 + 6 + 5) * (2 + 3 * 9 + 3) + 5) * (7 + 9 + 7 + 3 * 7) * 5
+        ///7 + (2 + 8 * 8 * 2 + (4 * 3 * 9 + 4 * 4)) + 4 * 3
+        ///6 + 9 * 2 * 2 + (2 + (7 * 6 * 6) + 4 * (7 * 8 * 2 + 4) * 7) + 7
+        ///2 + ((3 * 6 * 5 * 4 + 7 * 7) + 5 * 4 * 5 * (8 * 7 + 9) + 8) * (4 + 6 * 5)
+        ///(7 * 6 * 3 + 4 * 3 * 9) + (6 * 6 * (4 + 6 + 4) + 7 + 2 + (9 * 8 * 9 + 9 * 7 * 4)) + (3 * 4 + 3 + 2) * 8
+        ///(3 + (7 * 7 + 9 * 9 * 6)) * 3 * 5 + 4 * 8
+        ///8 + 9 * (2 + 2 * 5 + 9 * 2) * 2 + ((6 + 4) * 4 + (4 * 7 + 3 * 3 + 7) * (4 * 5 + 8 + 8 + 7 * 6) + ( [le reste de la chaîne a été tronqué]&quot;;.
+        /// </summary>
+        internal static string Input18 {
+            get {
+                return ResourceManager.GetString("Input18", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à 4-5 r: rrrjr
         ///9-10 x: pxcbpxxwkqjttx
         ///8-13 b: rjbbbbvgrbrfjx

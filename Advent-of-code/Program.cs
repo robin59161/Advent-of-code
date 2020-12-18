@@ -10,9 +10,10 @@ namespace Advent_of_code
     class Program
     {
         static readonly int Day = DateTime.Now.Day;
+        static readonly int Start = Day;
         static void Main(string[] args)
         {
-            for (int d = 1; d <= Day; d++)
+            for (int d = Day; d <= Day; d++)
             {
                 string className = (d < 10) ? "0"+d.ToString() : d.ToString();
                 Type t = Type.GetType("Advent_of_code.Day" + className);
