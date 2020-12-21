@@ -414,6 +414,41 @@ namespace Advent_of_code.Resources {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à 56: 39 28 | 110 10
+        ///85: 34 110 | 111 39
+        ///4: 39 74 | 110 44
+        ///125: 96 39 | 112 110
+        ///79: 39 117 | 110 24
+        ///91: 52 39 | 65 110
+        ///60: 39 83 | 110 58
+        ///101: 109 39 | 28 110
+        ///98: 130 39 | 88 110
+        ///8: 42
+        ///11: 42 31
+        ///27: 110 1 | 39 86
+        ///104: 28 110 | 44 39
+        ///120: 44 39 | 66 110
+        ///34: 110 35 | 39 46
+        ///116: 39 80 | 110 90
+        ///87: 74 39 | 64 110
+        ///76: 98 110 | 41 39
+        ///108: 115 110 | 44 39
+        ///59: 110 44
+        ///103: 110 36 | 39 33
+        ///66: 39 110 | 110 82
+        ///62: 39 102 | 110 116
+        ///30: 39 24 | 110 80
+        ///123: 110 44 | 39 109
+        ///93: 39 53 | 110 77
+        ///80: 39 [le reste de la chaîne a été tronqué]&quot;;.
+        /// </summary>
+        internal static string Input19 {
+            get {
+                return ResourceManager.GetString("Input19", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à 4-5 r: rrrjr
         ///9-10 x: pxcbpxxwkqjttx
         ///8-13 b: rjbbbbvgrbrfjx
