@@ -91,13 +91,10 @@ namespace Advent_of_code
             do
             {
                 line = lines[current];
-                string[] t = regex.GetGroupNames();
-                int t3;
-                string t2 = t.Where(x => !Int32.TryParse(x, out t3)).FirstOrDefault();
                 Match m = regex.Match(line);
-                string res = m.Groups["cycle"].Value;
-                if (regex.IsMatch(line))
+                if (m.Success)
                 {
+                    string res = m.Groups["cycle"].Value;
                     Regex group1 = new Regex(BuildRegex2(42));
                     Regex group2 = new Regex(BuildRegex2(8));
                     var r = group1.Matches(res);
