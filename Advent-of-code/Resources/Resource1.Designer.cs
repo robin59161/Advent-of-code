@@ -480,6 +480,70 @@ namespace Advent_of_code.Resources {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Tile 1657:
+        ///...#.####.
+        ///.....#...#
+        ///#.....#.#.
+        ///.##.#.....
+        ///#.........
+        ///.........#
+        ///##......#.
+        ///..........
+        ///........#.
+        ///.#.#..##..
+        ///
+        ///Tile 2749:
+        ///####.##..#
+        ///.#.#...#.#
+        ///#.#....#.#
+        ///...#.....#
+        ///.#...#..##
+        ///..#..##..#
+        ///......##.#
+        ///.#.#.###.#
+        ///#........#
+        ///..#..##.#.
+        ///
+        ///Tile 1697:
+        ///#..#...###
+        ///#.#..#....
+        ///.##.#..###
+        ///...#..#.#.
+        ///#...##..#.
+        ///.......##.
+        ///##....#...
+        ///#...#....#
+        ///...#.....#
+        ///.#....#...
+        ///
+        ///Tile 1619:
+        ///#.##.#.#.#
+        ///#.###..#..
+        ///##.......#
+        ///#.#.#...##
+        ///##.#.##...
+        ///....##....
+        ///#....#....
+        ///.#....#.##
+        ///.. [le reste de la chaîne a été tronqué]&quot;;.
+        /// </summary>
+        internal static string Input20 {
+            get {
+                return ResourceManager.GetString("Input20", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à rdtsmnf xqs nzthdh txhvv sllchtz jjd jghpp zgds mffvp knxgb bphh jzhq vzptf ldvdfx pjcjh xcdlz zfmblk qjmlf qsgkrt jlfqx kml fmk fmgtn sfq bkcspp mrfb krp rrpcm ttgjfc qqnjk vcrmpm cpbzbx cxk hjfpql bdvmx rbfmr ltjmzc ghtmm ghvnf vxndk ffdg fbbk qvtbzg vbjr lzlj rtvrr lmzg cxrxk lxcrcmg dqnqhq ffmljg ffqclnjs fcqrhrd fgmffbx sqnqtk mhzhnc xmdhh hkhfzh lnxsk gqftg zxcvbd hmkpl bsqh ggvg drbm cfnt (contains shellfish, soy)
+        ///ffmljg spzg dgdhz cpbzbx fqvj cfnt bsqh zxgk dsqfxk vbjr cxk dlrfs jzvjs jlfqx kjgd pq [le reste de la chaîne a été tronqué]&quot;;.
+        /// </summary>
+        internal static string Input21 {
+            get {
+                return ResourceManager.GetString("Input21", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à ....#..#.................#..#..
         ///#..#.#.#..#.###.#..#...#..#....
         ///.#....#......#.#.#..##...#...#.

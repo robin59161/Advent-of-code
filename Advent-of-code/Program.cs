@@ -10,7 +10,7 @@ namespace Advent_of_code
     class Program
     {
         static readonly int Day = DateTime.Now.Day;
-        static readonly int Start = 1;
+        static readonly int Start = Day;
         static void Main(string[] args)
         {
             for (int d = Start; d <= Day; d++)
