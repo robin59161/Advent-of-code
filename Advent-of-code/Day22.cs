@@ -57,8 +57,8 @@ namespace Advent_of_code
                 string conf = String.Join(',', deck[1]) + "|" + String.Join(',', deck[2]);
                 if (!config.Add(conf))
                     return new KeyValuePair<int, int[]>(1, deck[1]);
-                int p1 = deck[1].Take(1).First();
-                int p2 = deck[2].Take(1).First();
+                int p1 = deck[1].First();
+                int p2 = deck[2].First();
                 if (deck[1].Length > p1 && deck[2].Length > p2)
                 {
                     deck[1] = deck[1].Skip(1).ToArray();
