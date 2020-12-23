@@ -5917,6 +5917,9 @@ Player 2:
 30
 31</value>
   </data>
+  <data name="Input23" xml:space="preserve">
+    <value>598162734</value>
+  </data>
   <data name="Input3" xml:space="preserve">
     <value>....#..#.................#..#..
 #..#.#.#..#.###.#..#...#..#....

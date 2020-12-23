@@ -605,6 +605,15 @@ namespace Advent_of_code.Resources {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à 598162734.
+        /// </summary>
+        internal static string Input23 {
+            get {
+                return ResourceManager.GetString("Input23", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à ....#..#.................#..#..
         ///#..#.#.#..#.###.#..#...#..#....
         ///.#....#......#.#.#..##...#...#.
