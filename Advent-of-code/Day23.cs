@@ -11,15 +11,16 @@ namespace Advent_of_code
 
         public static string Part1(string input)
         {
-            int[] clock = input.Select(x => Convert.ToInt32(x.ToString())).ToArray();
-            clock = Run(clock, 100);
-            int Index1 = Array.IndexOf(clock, 1) + 1;
-            string res = string.Empty;
-            for (int i = 0; i < clock.Length - 1; i++)
+            ImmutableList<int> clock = input.Select(x => Convert.ToInt32(x.ToString())).ToImmutableList();
+            var cups = new LinkedList<int>(clock);
+            var res = Run2(cups, 100);
+            var result = "";
+            foreach (var _ in Enumerable.Range(0, 8))
             {
-                res += clock[(Index1 + i) % clock.Length].ToString();
+                res = res.NextOrFirst();
+                result += res.Value;
             }
-            return res;
+            return result;
         }
         //First naïv attempt
         public static int[] Run(int[] clock,int nbRepetition)
@@ -74,7 +75,7 @@ namespace Advent_of_code
             var res = Run2(cups, 10000000);
             return 1UL * (ulong)res.NextOrFirst().Value * (ulong)res.NextOrFirst().NextOrFirst().Value;
         }
-
+        
         static LinkedListNode<int> Run2(LinkedList<int> cups, int rounds)
         {
             var cupsIndex = new Dictionary<int, LinkedListNode<int>>();
@@ -94,7 +95,6 @@ namespace Advent_of_code
                         currentCup.NextOrFirst(),
                         currentCup.NextOrFirst().NextOrFirst(),
                         currentCup.NextOrFirst().NextOrFirst().NextOrFirst()};
-
                 foreach (var pick in pickUp)
                 {
                     cups.Remove(pick);
@@ -125,6 +125,7 @@ namespace Advent_of_code
             return cupsIndex[1];
         }
     }
+   
     static class CircularLinkedList
     {
         public static LinkedListNode<T> NextOrFirst<T>(this LinkedListNode<T> current)

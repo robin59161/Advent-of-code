@@ -605,11 +605,45 @@ namespace Advent_of_code.Resources {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à 598162734.
+        ///   Recherche une chaîne localisée semblable à 389125467.
         /// </summary>
         internal static string Input23 {
             get {
                 return ResourceManager.GetString("Input23", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à sesenwnenenewseeswwswswwnenewsewsw
+        ///neeenesenwnwwswnenewnwwsewnenwseswesw
+        ///seswneswswsenwwnwse
+        ///nwnwneseeswswnenewneswwnewseswneseene
+        ///swweswneswnenwsewnwneneseenw
+        ///eesenwseswswnenwswnwnwsewwnwsene
+        ///sewnenenenesenwsewnenwwwse
+        ///wenwwweseeeweswwwnwwe
+        ///wsweesenenewnwwnwsenewsenwwsesesenwne
+        ///neeswseenwwswnwswswnw
+        ///nenwswwsewswnenenewsenwsenwnesesenew
+        ///enewnwewneswsewnwswenweswnenwsenwsw
+        ///sweneswneswneneenwnewenewwneswswnese
+        ///swwesenesewenwneswnwwneseswwne
+        ///enesenwswwswneneswsenwnewswseenwsese
+        ///wnwnesenesenenwwn [le reste de la chaîne a été tronqué]&quot;;.
+        /// </summary>
+        internal static string Input24 {
+            get {
+                return ResourceManager.GetString("Input24", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à 13316116
+        ///13651422.
+        /// </summary>
+        internal static string Input25 {
+            get {
+                return ResourceManager.GetString("Input25", resourceCulture);
             }
         }
         
