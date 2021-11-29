@@ -7,7 +7,12 @@ namespace Advent_of_code._2020
 {
     public static class Day03
     {
-        public static int Part1(string input,int salopeX,int salopeY)
+
+        public static int Part1(string input)
+        {
+            return Solve(input, 3, 1);
+        }
+        public static int Solve(string input,int salopeX,int salopeY)
         {
             string[] lines = input.Split(Environment.NewLine);
             int posY = 0;
@@ -35,7 +40,7 @@ namespace Advent_of_code._2020
             int sum = 1;
             Action<int[]> action = delegate (int[] salope)
             {
-                sum *= Part1(input, salope[0], salope[1]);
+                sum *= Solve(input, salope[0], salope[1]);
             };
             Array.ForEach(salopes, action);
             return sum;

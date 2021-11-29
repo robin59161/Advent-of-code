@@ -36,7 +36,7 @@ namespace Advent_of_code
                             try
                             {
                                 res = method.Invoke(t, new object[] { input }).ToString();
-                            }catch(Exception e)
+                            }catch(Exception)
                             {
                                 res = "Error";
                             }

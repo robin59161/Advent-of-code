@@ -18,9 +18,12 @@ namespace Advent_of_code._2020
         }
         public static int Part2(string input)
         {
-            foreach (string line in input.Split(Environment.NewLine))
+            if (BagFactory.Bags.Count == 0)
             {
-                BagFactory.AddBag(line);
+                foreach (string line in input.Split(Environment.NewLine))
+                {
+                    BagFactory.AddBag(line);
+                }
             }
             return BagFactory.GetBag("shiny gold").CanHold(1);
         }
@@ -80,6 +83,7 @@ namespace Advent_of_code._2020
     public static class BagFactory
     {
         public static List<Bag> Bags = new List<Bag>();
+
         public static void AddBag(string bag)
         {
             Regex r = new Regex(@"(.*) bags contain (.*)");
