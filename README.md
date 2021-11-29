@@ -29,7 +29,7 @@
 ### Day 3
 <table>
 <tr><td> Part 1</td>
-<td>Error</td><td> Execution time :0,0174s</td></tr>
+<td>237</td><td> Execution time < 0,0001s</td></tr>
 <tr><td> Part 2</td>
 <td>2106818610</td><td> Execution time :0,0008s</td></tr>
 </table>
@@ -63,7 +63,7 @@
 <tr><td> Part 1</td>
 <td>274</td><td> Execution time :0,0336s</td></tr>
 <tr><td> Part 2</td>
-<td>Error</td><td> Execution time :1,8403s</td></tr>
+<td>158730</td><td> Execution time :0,00032s</td></tr>
 </table>
 
 ### Day 8
