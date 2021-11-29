@@ -4,7 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 
-namespace Advent_of_code
+namespace Advent_of_code._2020
 {
     public static class Day11
     {

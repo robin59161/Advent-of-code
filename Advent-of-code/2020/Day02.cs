@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Text.RegularExpressions;
 
-namespace Advent_of_code
+namespace Advent_of_code._2020
 {
     public static class Day02
     {

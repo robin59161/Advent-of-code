@@ -3,24 +3,26 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using System.Resources;
 using System.Text.RegularExpressions;
 
 namespace Advent_of_code
 {
     class Program
     {
-        static readonly int Day = DateTime.Now.Day;
-        static readonly int Start = 25;
+        static readonly int Day = 25;
+        static readonly int Start = 1;
         static void Main(string[] args)
         {
+            (string, ResourceManager) choice = PrintChoice();
             for (int d = Start; d <= Day; d++)
             {
                 string className = (d < 10) ? "0"+d.ToString() : d.ToString();
-                Type t = Type.GetType("Advent_of_code.Day" + className);
+                Type t = Type.GetType(String.Format("Advent_of_code._{0}.Day{1}",choice.Item1,className));
 
                 if (t != null)
                 {
-                    string input = Resources.Resource1.ResourceManager.GetString("Input" + d);
+                    string input = choice.Item2.GetString("Input" + d);
                     Console.WriteLine("Jour " + d);
                     Console.WriteLine("╔════════╦═════════════════╦═══════════════════════════════╗");
                     for (int i = 1; i <= 2; i++)
@@ -48,6 +50,25 @@ namespace Advent_of_code
                 }
             }
             Console.ReadKey();
+        }
+
+        public static (string,ResourceManager) PrintChoice()
+        {
+            while (true) {
+                Console.WriteLine("Quelle année souhaité vous exécuter :");
+                Console.WriteLine("1. 2020");
+                Console.WriteLine("2. 2021");
+                var key = Console.ReadKey();
+                Console.WriteLine("");
+                switch (key.Key)
+                {
+                    case ConsoleKey.NumPad1:
+                        return ("2020",Resources.Input2020.ResourceManager);
+                    case ConsoleKey.NumPad2:
+                        return ("2021", Resources.Input2021.ResourceManager);
+                }
+                Console.WriteLine("Mauvaise entrée");
+            }
         }
         
     }

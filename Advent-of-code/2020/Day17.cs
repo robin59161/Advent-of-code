@@ -7,7 +7,7 @@ namespace System.Runtime.CompilerServices
 {
     public class IsExternalInit { }
 }
-namespace Advent_of_code
+namespace Advent_of_code._2020
 {
     public static class Day17
     {

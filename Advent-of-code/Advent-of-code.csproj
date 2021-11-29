@@ -8,17 +8,26 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Update="Resources\Resource1.Designer.cs">
+    <Compile Update="Resources\Input2021.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
-      <DependentUpon>Resource1.resx</DependentUpon>
+      <DependentUpon>Input2021.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Resources\Input2020.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Input2020.resx</DependentUpon>
     </Compile>
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Resources\Resource1.resx">
+    <EmbeddedResource Update="Resources\Input2021.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resource1.Designer.cs</LastGenOutput>
+      <LastGenOutput>Input2021.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Input2020.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Input2020.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
 
