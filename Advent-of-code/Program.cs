@@ -62,9 +62,9 @@ namespace Advent_of_code
                 Console.WriteLine("");
                 switch (key.Key)
                 {
-                    case ConsoleKey.NumPad1:
-                        return ("2020",Resources.Input2020.ResourceManager);
                     case ConsoleKey.NumPad2:
+                        return ("2021", Resources.Input2021.ResourceManager);
+                    case ConsoleKey.D2:
                         return ("2021", Resources.Input2021.ResourceManager);
                 }
                 Console.WriteLine("Mauvaise entrée");
