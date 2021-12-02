@@ -170,5 +170,70 @@ namespace Advent_of_code.Resources {
                 return ResourceManager.GetString("Input1", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à forward 1
+        ///down 6
+        ///down 6
+        ///forward 2
+        ///forward 2
+        ///down 2
+        ///down 1
+        ///down 5
+        ///down 7
+        ///down 3
+        ///forward 1
+        ///forward 6
+        ///up 2
+        ///forward 2
+        ///forward 7
+        ///forward 4
+        ///down 2
+        ///forward 6
+        ///forward 6
+        ///down 3
+        ///up 7
+        ///down 6
+        ///forward 2
+        ///up 5
+        ///down 7
+        ///forward 8
+        ///down 8
+        ///forward 8
+        ///down 5
+        ///down 5
+        ///down 8
+        ///forward 9
+        ///down 7
+        ///forward 9
+        ///forward 9
+        ///forward 8
+        ///down 6
+        ///down 9
+        ///down 1
+        ///forward 8
+        ///down 6
+        ///down 7
+        ///up 3
+        ///forward 5
+        ///down 1
+        ///down 7
+        ///up 8
+        ///forward 6
+        ///down 2
+        ///down 9
+        ///down 9
+        ///forward 1
+        ///down 2
+        ///down 9
+        ///forward 1
+        ///forward 3
+        ///down  [le reste de la chaîne a été tronqué]&quot;;.
+        /// </summary>
+        internal static string Input2 {
+            get {
+                return ResourceManager.GetString("Input2", resourceCulture);
+            }
+        }
     }
 }

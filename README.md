@@ -17,3 +17,11 @@
 <tr><td> Part 2</td>
 <td>1235</td><td> Execution time :0s</td></tr>
 </table>
+
+### Day 2
+<table>
+<tr><td> Part 1</td>
+<td>2187380</td><td> Execution time :0,001s</td></tr>
+<tr><td> Part 2</td>
+<td>2086357770</td><td> Execution time :0,001s</td></tr>
+</table>
