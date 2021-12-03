@@ -56,15 +56,14 @@ namespace Advent_of_code
         {
             while (true) {
                 Console.WriteLine("Quelle année souhaité vous exécuter :");
-                Console.WriteLine("1. 2020");
-                Console.WriteLine("2. 2021");
+                Console.WriteLine("1. 2021");
                 var key = Console.ReadKey();
                 Console.WriteLine("");
                 switch (key.Key)
                 {
-                    case ConsoleKey.NumPad2:
+                    case ConsoleKey.NumPad1:
                         return ("2021", Resources.Input2021.ResourceManager);
-                    case ConsoleKey.D2:
+                    case ConsoleKey.D1:
                         return ("2021", Resources.Input2021.ResourceManager);
                 }
                 Console.WriteLine("Mauvaise entrée");
