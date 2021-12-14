@@ -41,3 +41,27 @@
 <tr><td> Part 2</td>
 <td>12080</td><td> Execution time :0,057s</td></tr>
 </table>
+
+### Day 5
+<table>
+<tr><td> Part 1</td>
+<td></td><td> Execution time :0,025s</td></tr>
+<tr><td> Part 2</td>
+<td></td><td> Execution time :0,057s</td></tr>
+</table>
+
+### Day 6
+<table>
+<tr><td> Part 1</td>
+<td>375482</td><td> Execution time :0,006s</td></tr>
+<tr><td> Part 2</td>
+<td>1689540415957</td><td> Execution time :0,001s</td></tr>
+</table>
+
+### Day 7
+<table>
+<tr><td> Part 1</td>
+<td>340052</td><td> Execution time :0,002s</td></tr>
+<tr><td> Part 2</td>
+<td>92948968</td><td> Execution time :0,223s</td></tr>
+</table>
