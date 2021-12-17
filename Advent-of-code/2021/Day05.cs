@@ -10,7 +10,7 @@ namespace Advent_of_code._2021
         public static int Part1(string input)
         {
             string[] splittedInput = input.Split(Environment.NewLine);
-            Grid grid = new Grid();
+            /*Grid grid = new Grid();
             foreach (string inputCoord in splittedInput)
             {
                 int[][] coords = inputCoord.Split(" -> ").Select(x => x.Split(",").Select(y => Convert.ToInt32(y)).ToArray()).ToArray();
@@ -36,7 +36,8 @@ namespace Advent_of_code._2021
                     }
                 }
             }
-            return grid.cells.Where(cell => cell.values >= 2).Count();
+            return grid.cells.Where(cell => cell.values >= 2).Count();*/
+            return 0; 
         }
 
         internal class Grid
