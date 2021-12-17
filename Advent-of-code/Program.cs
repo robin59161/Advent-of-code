@@ -15,39 +15,37 @@ namespace Advent_of_code
         static void Main(string[] args)
         {
             (string, ResourceManager) choice = PrintChoice();
-            for (int d = Start; d <= Day; d++)
-            {
-                string className = (d < 10) ? "0"+d.ToString() : d.ToString();
-                Type t = Type.GetType(String.Format("Advent_of_code._{0}.Day{1}",choice.Item1,className));
+            string className = (16 < 10) ? "0"+16.ToString() : 16.ToString();
+            Type t = Type.GetType(String.Format("Advent_of_code._{0}.Day{1}",choice.Item1,className));
 
-                if (t != null)
+            if (t != null)
+            {
+                string input = choice.Item2.GetString("Input16");
+                Console.WriteLine("Jour 16");
+                Console.WriteLine("╔════════╦═════════════════╦═══════════════════════════════╗");
+                for (int i = 1; i <= 2; i++)
                 {
-                    string input = choice.Item2.GetString("Input" + d);
-                    Console.WriteLine("Jour " + d);
-                    Console.WriteLine("╔════════╦═════════════════╦═══════════════════════════════╗");
-                    for (int i = 1; i <= 2; i++)
+                    MethodInfo method = t.GetMethod("Part" + i);
+                    if (method != null)
                     {
-                        MethodInfo method = t.GetMethod("Part" + i);
-                        if (method != null)
+                        Stopwatch st = new Stopwatch();
+                        st.Start();
+                        var res = string.Empty;
+                        try
                         {
-                            Stopwatch st = new Stopwatch();
-                            st.Start();
-                            var res = string.Empty;
-                            try
-                            {
-                                res = method.Invoke(t, new object[] { input }).ToString();
-                            }catch(Exception)
-                            {
-                                res = "Error";
-                            }
-                            st.Stop();
-                            Console.WriteLine("║ Part {0} ║ {1,-15} ║ Temps d'éxécution: {2,-10} ║", i, res, Math.Round(st.Elapsed.TotalSeconds, 3) + "s");
+                            res = method.Invoke(t, new object[] { input }).ToString();
                         }
-                        if (i == 1)
-                            Console.WriteLine("╠════════╬═════════════════╬═══════════════════════════════╣");
+                        catch (Exception)
+                        {
+                            res = "Error";
+                        }
+                        st.Stop();
+                        Console.WriteLine("║ Part {0} ║ {1,-15} ║ Temps d'éxécution: {2,-10} ║", i, res, Math.Round(st.Elapsed.TotalSeconds, 3) + "s");
                     }
-                    Console.WriteLine("╚════════╩═════════════════╩═══════════════════════════════╝");
+                    if (i == 1)
+                        Console.WriteLine("╠════════╬═════════════════╬═══════════════════════════════╣");
                 }
+                Console.WriteLine("╚════════╩═════════════════╩═══════════════════════════════╝");
             }
             Console.ReadKey();
         }
