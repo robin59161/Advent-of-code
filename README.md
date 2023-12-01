@@ -8,6 +8,16 @@
 </tr>
 </table>
 
+## 💬 2023
+
+### Day 1
+<table>
+<tr><td> Part 1</td>
+<td></td><td>DotNet: Execution time :0,001s</td><td>Ts: Execution time :0,001s</td></tr>
+<tr><td> Part 2</td>
+<td></td><td>DotNet: Execution time :0,001s</td><td>Ts: Execution time :0,001s</td></tr>
+</table>
+
 ## 💬 2021
 
 ### Day 1
