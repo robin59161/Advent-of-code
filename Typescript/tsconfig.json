@@ -13,6 +13,5 @@
     "module": "esnext",
     "moduleResolution": "node",
     "outDir": "dist"
-  }, 
-  "include": ["2023/01_index.ts"]
+  }
 }
