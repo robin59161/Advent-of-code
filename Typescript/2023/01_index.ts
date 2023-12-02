@@ -1,1 +1,2 @@
-console.log('Hello world!')
+const coucou: string = 'Hello World'
+console.log(coucou)
