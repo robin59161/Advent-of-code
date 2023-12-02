@@ -15,13 +15,13 @@ namespace Advent_of_code
         static void Main(string[] args)
         {
             (string, ResourceManager) choice = PrintChoice();
-            string className = (16 < 10) ? "0"+16.ToString() : 16.ToString();
+            string className = (1 < 10) ? "0"+1.ToString() : 1.ToString();
             Type t = Type.GetType(String.Format("Advent_of_code._{0}.Day{1}",choice.Item1,className));
 
             if (t != null)
             {
-                string input = choice.Item2.GetString("Input16");
-                Console.WriteLine("Jour 16");
+                string input = choice.Item2.GetString("Input1");
+                Console.WriteLine("Jour 1");
                 Console.WriteLine("╔════════╦═════════════════╦═══════════════════════════════╗");
                 for (int i = 1; i <= 2; i++)
                 {
@@ -40,7 +40,7 @@ namespace Advent_of_code
                             res = "Error";
                         }
                         st.Stop();
-                        Console.WriteLine("║ Part {0} ║ {1,-15} ║ Temps d'éxécution: {2,-10} ║", i, res, Math.Round(st.Elapsed.TotalSeconds, 3) + "s");
+                        Console.WriteLine("║ Part {0} ║ {1,-15} ║ Temps d'éxécution: {2,-10} ║", i, res, Math.Round(st.Elapsed.TotalMilliseconds, 3) + "ms");
                     }
                     if (i == 1)
                         Console.WriteLine("╠════════╬═════════════════╬═══════════════════════════════╣");
@@ -55,14 +55,19 @@ namespace Advent_of_code
             while (true) {
                 Console.WriteLine("Quelle année souhaité vous exécuter :");
                 Console.WriteLine("1. 2021");
+                Console.WriteLine("2. 2023");
                 var key = Console.ReadKey();
                 Console.WriteLine("");
                 switch (key.Key)
                 {
+                    case ConsoleKey.NumPad2:
+                        return ("2023", Resources.Input2023.ResourceManager);
+                    case ConsoleKey.D2:
+                        return ("2023", Resources.Input2023.ResourceManager);
                     case ConsoleKey.NumPad1:
-                        return ("2021", Resources.Input2021.ResourceManager);
+                        return ("2021", Resources.Input2023.ResourceManager);
                     case ConsoleKey.D1:
-                        return ("2021", Resources.Input2021.ResourceManager);
+                        return ("2021", Resources.Input2023.ResourceManager);
                 }
                 Console.WriteLine("Mauvaise entrée");
             }
