@@ -77,6 +77,5 @@ const getCalibrationPart2 = (puzzleLine: string) => {
                 lastNumber = number
         }
     }
-    console.log(`${puzzleLine} -> ${firstNumber}${Number.isNaN(lastNumber) ? firstNumber : lastNumber}`)
     return parseInt(`${firstNumber}${Number.isNaN(lastNumber) ? firstNumber : lastNumber}`)
 }
