@@ -26,25 +26,17 @@ namespace Advent_of_code._2023
             int? second = null;
 
             int i = 0;
-            while(i < input.Length)
+            while((!first.HasValue || !second.HasValue) && i < input.Length)
             {
-                if (int.TryParse(input[i].ToString(), out int result))
+                if (!first.HasValue && int.TryParse(input[i].ToString(), out int result))
                 {
-                    if(!first.HasValue)
-                    {
-                        first = result;
-                    }
-                    else
-                    {
-                        second = result;
-                    }
+                    first = result;
+                }
+                if(!second.HasValue && int.TryParse(input[input.Length - (i + 1)].ToString(), out result))
+                {
+                    second = result;
                 }
                 i++;
-            }
-
-            if(!second.HasValue)
-            {
-                second = first;
             }
 
             return Convert.ToInt32($"{first}{second}");
@@ -80,33 +72,32 @@ namespace Advent_of_code._2023
         {
             int? first = null;
             int? second = null;
-            string lastChar = "";
+            string[] lastChar = new string[2] { "", "" } ;
             int i = 0;
-            while (i < input.Length)
+            while ((!first.HasValue || !second.HasValue) && i < input.Length)
             {
-                lastChar += input[i].ToString();
-                string key = keyValues.Keys.FirstOrDefault(lastChar.EndsWith);
-                int result = 0;
-                if (int.TryParse(input[i].ToString(), out result) || !string.IsNullOrEmpty(key))
+                lastChar[0] += input[i].ToString();
+                lastChar[1] = input[input.Length - (i + 1)].ToString() + lastChar[1];
+                string keyFirst = keyValues.Keys.FirstOrDefault(lastChar[0].EndsWith);
+                string keySecond = keyValues.Keys.FirstOrDefault(lastChar[1].StartsWith);
+
+                if (!first.HasValue && int.TryParse(input[i].ToString(), out int result))
                 {
-                    if (result == 0)
-                        result = keyValues[key];
-                    lastChar = "";
-                    if (!first.HasValue)
-                    {
-                        first = result;
-                    }
-                    else
-                    {
-                        second = result;
-                    }
+                    first = result;
+                }
+                else if(!first.HasValue && !string.IsNullOrEmpty(keyFirst))
+                {
+                    first = keyValues[keyFirst];
+                }
+                if (!second.HasValue && int.TryParse(input[input.Length - (i + 1)].ToString(), out result))
+                {
+                    second = result;
+                }
+                else if (!second.HasValue && !string.IsNullOrEmpty(keySecond))
+                {
+                    second = keyValues[keySecond];
                 }
                 i++;
-            }
-
-            if (!second.HasValue)
-            {
-                second = first;
             }
 
             return Convert.ToInt32($"{first}{second}");
