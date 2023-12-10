@@ -1,6 +1,6 @@
 import express from 'express';
 import * as fs from 'fs';
-import { Result } from './02_index.js';
+import { Result } from './03_index.js';
 const app = express();
 const port = 3000;
 app.get('/', (req, res) => {
