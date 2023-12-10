@@ -35,47 +35,57 @@ const KEYS = Object.keys(STRING_NUMBER)
 const getCalibration = (puzzleLine: string) => {
     let firstNumber: number = NaN
     let lastNumber: number = NaN
-    for(const puzzleItem of puzzleLine){
+    let i: number = 0
+    while((Number.isNaN(firstNumber) || Number.isNaN(lastNumber)) && i <= puzzleLine.length) {
         let number: number = NaN
-        number = parseInt(puzzleItem)
+        number = parseInt(puzzleLine[i])
 
-        if(Number.isNaN(number))
-            continue
-        else if(Number.isNaN(firstNumber))
+        if(Number.isNaN(firstNumber) && !Number.isNaN(number))
             firstNumber = number
-        else 
+        
+        number = parseInt(puzzleLine[puzzleLine.length - i])
+        if(Number.isNaN(lastNumber) && !Number.isNaN(number))
             lastNumber = number
+
+        i++;
     }
-    return parseInt(`${firstNumber}${Number.isNaN(lastNumber) ? firstNumber : lastNumber}`)
+    return parseInt(`${firstNumber}${lastNumber}`)
 }
 
 
 const getCalibrationPart2 = (puzzleLine: string) => {
     let firstNumber: number = NaN
     let lastNumber: number = NaN
-    let lastChar: string = ""
-    for(const puzzleItem of puzzleLine){
-        lastChar += puzzleItem
+    let lastChar: string[] = ["", ""]
+    let i: number = 0
+    while((Number.isNaN(firstNumber) || Number.isNaN(lastNumber)) && i <= puzzleLine.length) {
+        lastChar[0] = lastChar[0] + puzzleLine[i]
+        lastChar[1] = puzzleLine[puzzleLine.length - i] + lastChar[1]
         let number: number = NaN
-        number = parseInt(puzzleItem)
+        number = parseInt(puzzleLine[i])
 
-        if(Number.isNaN(number)){
-            const keyInLastChar = KEYS.find((key) => lastChar.endsWith(key))
+        if(Number.isNaN(firstNumber) && !Number.isNaN(number))
+            firstNumber = number
+        else if (Number.isNaN(firstNumber)){
+            const keyInLastChar = KEYS.find((key) => lastChar[0].endsWith(key))
             if(keyInLastChar) {
-                number = STRING_NUMBER[keyInLastChar as FirstDigit]
-                lastChar = ""
+                firstNumber = STRING_NUMBER[keyInLastChar as FirstDigit]
+                lastChar[0] = ""
             }
         }
 
-        if(Number.isNaN(number))
-            continue
-        else {
-            lastChar = ""
-            if(Number.isNaN(firstNumber))
-                firstNumber = number
-            else 
-                lastNumber = number
+        number = parseInt(puzzleLine[puzzleLine.length - i])
+        if(Number.isNaN(lastNumber) && !Number.isNaN(number))
+            lastNumber = number
+        else if (Number.isNaN(lastNumber)){
+            const keyInLastChar = KEYS.find((key) => lastChar[1].startsWith(key))
+            if(keyInLastChar) {
+                lastNumber = STRING_NUMBER[keyInLastChar as FirstDigit]
+                lastChar[1] = ""
+            }
         }
+
+        i++;
     }
-    return parseInt(`${firstNumber}${Number.isNaN(lastNumber) ? firstNumber : lastNumber}`)
+    return parseInt(`${firstNumber}${lastNumber}`)
 }
