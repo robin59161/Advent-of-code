@@ -1,6 +1,6 @@
 import express from 'express';
 import * as fs from 'fs';
-import { ResultPart2 } from './01/01_index.js';
+import { Result } from './02_index.js';
 const app = express();
 const port = 3000;
 app.get('/', (req, res) => {
@@ -11,7 +11,7 @@ app.get('/', (req, res) => {
     let i = 0;
     while (i < NumberOfRetry) {
         const start = performance.now();
-        result = ResultPart2(puzzle);
+        result = Result(puzzle);
         elapsedTimes.push(performance.now() - start);
         i++;
     }

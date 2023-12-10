@@ -36,14 +36,14 @@ const getCalibration = (puzzleLine: string) => {
     let firstNumber: number = NaN
     let lastNumber: number = NaN
     let i: number = 0
-    while((Number.isNaN(firstNumber) || Number.isNaN(lastNumber)) && i <= puzzleLine.length) {
+    while((Number.isNaN(firstNumber) || Number.isNaN(lastNumber)) && i < puzzleLine.length) {
         let number: number = NaN
         number = parseInt(puzzleLine[i])
 
         if(Number.isNaN(firstNumber) && !Number.isNaN(number))
             firstNumber = number
         
-        number = parseInt(puzzleLine[puzzleLine.length - i])
+        number = parseInt(puzzleLine[puzzleLine.length - (i + 1)])
         if(Number.isNaN(lastNumber) && !Number.isNaN(number))
             lastNumber = number
 
@@ -58,9 +58,9 @@ const getCalibrationPart2 = (puzzleLine: string) => {
     let lastNumber: number = NaN
     let lastChar: string[] = ["", ""]
     let i: number = 0
-    while((Number.isNaN(firstNumber) || Number.isNaN(lastNumber)) && i <= puzzleLine.length) {
+    while((Number.isNaN(firstNumber) || Number.isNaN(lastNumber)) && i < puzzleLine.length) {
         lastChar[0] = lastChar[0] + puzzleLine[i]
-        lastChar[1] = puzzleLine[puzzleLine.length - i] + lastChar[1]
+        lastChar[1] = puzzleLine[puzzleLine.length - (i + 1)] + lastChar[1]
         let number: number = NaN
         number = parseInt(puzzleLine[i])
 
@@ -74,7 +74,7 @@ const getCalibrationPart2 = (puzzleLine: string) => {
             }
         }
 
-        number = parseInt(puzzleLine[puzzleLine.length - i])
+        number = parseInt(puzzleLine[puzzleLine.length - (i + 1)])
         if(Number.isNaN(lastNumber) && !Number.isNaN(number))
             lastNumber = number
         else if (Number.isNaN(lastNumber)){

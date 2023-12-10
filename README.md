@@ -18,6 +18,14 @@
 <td></td><td>DotNet: Execution time : 290,677ms</td><td>Ts: Execution time : 2.8775099444218966ms</td></tr>
 </table>
 
+### Day 2
+<table>
+<tr><td> Part 1</td>
+<td>2169</td><td>DotNet: Execution time : 0ms</td><td>Ts: Execution time : 0.6804945585337011ms</td></tr>
+<tr><td> Part 2</td>
+<td>60948</td><td>DotNet: Execution time : 0ms</td><td>Ts: Execution time : 0.6901150457224576ms</td></tr>
+</table>
+
 ## 💬 2021
 
 ### Day 1
