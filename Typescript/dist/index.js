@@ -1,17 +1,17 @@
 import express from 'express';
 import * as fs from 'fs';
-import { Result } from './03_index.js';
+import { ResultPart2 } from './03_index.js';
 const app = express();
 const port = 3000;
 app.get('/', (req, res) => {
     const puzzle = fs.readFileSync('D://Advent-of-code/TypeScript/input.txt', 'utf-8');
     const elapsedTimes = [];
-    const NumberOfRetry = 50;
+    const NumberOfRetry = 1;
     let result;
     let i = 0;
     while (i < NumberOfRetry) {
         const start = performance.now();
-        result = Result(puzzle);
+        result = ResultPart2(puzzle);
         elapsedTimes.push(performance.now() - start);
         i++;
     }
