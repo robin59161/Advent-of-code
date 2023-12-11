@@ -14,6 +14,13 @@ export const ResultPart2 = (puzzle: string) => {
     return (countCards(puzzleMapped, puzzleMapped))
 }
 
+interface Cache {
+    key: Card[]
+    value: number
+}
+
+const CACHE_RESULT: Cache[] = []
+
 const CountWining = (puzzleLine: string): number => {
     let winingCount: number = 0
 
@@ -44,10 +51,20 @@ const countCards = (originalPuzzleMapped: Card[], puzzleMapped: Card[]): number 
     {
         const winingCount: number = CountWining2(card)
 
-        sum += 1 + countCards(
-            originalPuzzleMapped, 
-            originalPuzzleMapped.filter((value) => value.number <= (card.number + winingCount) && value.number > card.number)
-            )
+        const filtered: Card[] = originalPuzzleMapped.filter((value) => value.number <= (card.number + winingCount) && value.number > card.number)
+
+        const cache: Cache | undefined = FindFromCache(filtered)
+        if(cache)
+            sum += 1 + cache.value
+        else {
+            const countCardsValue = countCards(
+                originalPuzzleMapped, 
+                originalPuzzleMapped.filter((value) => value.number <= (card.number + winingCount) && value.number > card.number)
+                )
+            
+            CACHE_RESULT.push({key: filtered, value: countCardsValue})
+            sum += 1 + countCardsValue
+        }
     }
 
     return sum
@@ -82,4 +99,23 @@ const CountWining2 = (card: Card): number => {
     }
 
     return winingCount
+}
+
+const FindFromCache = (cards: Card[]): Cache | undefined => {
+    if(cards.length === 0)
+        return { key: [], value: 0 }
+    else {
+        return CACHE_RESULT.find((cache) => {
+            const cacheKeys = cache.key.map((card) => card.number)
+            const cardKeys = cards.map((el) => el.number)
+            if(cacheKeys === cardKeys) return true
+            if(cacheKeys.length !== cardKeys.length) return false
+
+            for(const cacheKey of cacheKeys){
+                if(!cardKeys.includes(cacheKey))
+                    return false
+            }
+            return true
+        })
+    }
 }

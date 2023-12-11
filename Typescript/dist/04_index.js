@@ -12,6 +12,7 @@ export const ResultPart2 = (puzzle) => {
     }, []);
     return (countCards(puzzleMapped, puzzleMapped));
 };
+const CACHE_RESULT = [];
 const CountWining = (puzzleLine) => {
     let winingCount = 0;
     const [wining, card] = puzzleLine.split(":")[1].split("|");
@@ -28,7 +29,15 @@ const countCards = (originalPuzzleMapped, puzzleMapped) => {
     let sum = 0;
     for (const card of puzzleMapped) {
         const winingCount = CountWining2(card);
-        sum += 1 + countCards(originalPuzzleMapped, originalPuzzleMapped.filter((value) => value.number <= (card.number + winingCount) && value.number > card.number));
+        const filtered = originalPuzzleMapped.filter((value) => value.number <= (card.number + winingCount) && value.number > card.number);
+        const cache = FindFromCache(filtered);
+        if (cache)
+            sum += 1 + cache.value;
+        else {
+            const countCardsValue = countCards(originalPuzzleMapped, originalPuzzleMapped.filter((value) => value.number <= (card.number + winingCount) && value.number > card.number));
+            CACHE_RESULT.push({ key: filtered, value: countCardsValue });
+            sum += 1 + countCardsValue;
+        }
     }
     return sum;
 };
@@ -53,4 +62,23 @@ const CountWining2 = (card) => {
         }
     }
     return winingCount;
+};
+const FindFromCache = (cards) => {
+    if (cards.length === 0)
+        return { key: [], value: 0 };
+    else {
+        return CACHE_RESULT.find((cache) => {
+            const cacheKeys = cache.key.map((card) => card.number);
+            const cardKeys = cards.map((el) => el.number);
+            if (cacheKeys === cardKeys)
+                return true;
+            if (cacheKeys.length !== cardKeys.length)
+                return false;
+            for (const cacheKey of cacheKeys) {
+                if (!cardKeys.includes(cacheKey))
+                    return false;
+            }
+            return true;
+        });
+    }
 };

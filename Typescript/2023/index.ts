@@ -8,7 +8,7 @@ const port = 3000
 app.get('/', (req, res) => {
     const puzzle = fs.readFileSync('D://Advent-of-code/TypeScript/input.txt', 'utf-8')
     const elapsedTimes: number[] = []
-    const NumberOfRetry: number = 1
+    const NumberOfRetry: number = 50
     let result: any
     let i = 0
     while(i < NumberOfRetry) {

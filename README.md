@@ -39,7 +39,7 @@
 <tr><td> Part 1</td>
 <td>23678</td><td>DotNet: Execution time : 0ms</td><td>Ts: Execution time : 1.3304225219810242ms</td></tr>
 <tr><td> Part 2</td>
-<td>15455663</td><td>DotNet: Execution time : 0ms</td><td>Ts: Execution time : 22384.219000000507ms</td></tr>
+<td>15455663</td><td>DotNet: Execution time : 0ms</td><td>Ts: Execution time : 6.765595607368333ms</td></tr>
 </table>
 
 ## 💬 2021
