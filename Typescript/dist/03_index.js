@@ -84,7 +84,6 @@ const GetGear = (puzzleLine, puzzleSplit, indexX) => {
                 i++;
             }
             sumGear += numbers.length >= 2 ? product : 0;
-            console.log({ numbers, product, puzzleLine, sumGear });
         }
     }
     return sumGear;

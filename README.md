@@ -31,7 +31,15 @@
 <tr><td> Part 1</td>
 <td>551094</td><td>DotNet: Execution time : 0ms</td><td>Ts: Execution time : 5.169968986129153ms</td></tr>
 <tr><td> Part 2</td>
-<td>0</td><td>DotNet: Execution time : 0ms</td><td>Ts: Execution time : 0ms</td></tr>
+<td>80179647</td><td>DotNet: Execution time : 0ms</td><td>Ts: Execution time : 0.7987573263920629ms</td></tr>
+</table>
+
+### Day 4
+<table>
+<tr><td> Part 1</td>
+<td>23678</td><td>DotNet: Execution time : 0ms</td><td>Ts: Execution time : 1.3304225219810242ms</td></tr>
+<tr><td> Part 2</td>
+<td>15455663</td><td>DotNet: Execution time : 0ms</td><td>Ts: Execution time : 22384.219000000507ms</td></tr>
 </table>
 
 ## 💬 2021

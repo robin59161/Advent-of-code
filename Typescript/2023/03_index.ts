@@ -103,7 +103,6 @@ const GetGear = (puzzleLine: string, puzzleSplit: string[], indexX: number): num
                 i++
             }
             sumGear += numbers.length >= 2 ? product : 0
-            console.log({ numbers, product, puzzleLine, sumGear })
         }
     }
 
